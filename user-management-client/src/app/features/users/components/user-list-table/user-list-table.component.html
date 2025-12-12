@@ -1,0 +1,36 @@
+<div class="card overflow-hidden">
+    <table class="user-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td class="id-col">{{ user.id }}</td>
+                <td class="name-col">
+                    <div class="avatar-ph">{{ user.name.charAt(0) }}</div>
+                    {{ user.name }}
+                </td>
+                <td>{{ user.email }}</td>
+                <td>
+                    <span class="badge badge-role">{{ user.role }}</span>
+                </td>
+                <td>
+                    <span class="status-indicator" [class.active]="user.isActive">
+                        {{ user.isActive ? 'Active' : 'Inactive' }}
+                    </span>
+                </td>
+                <td class="text-center">
+                    <button class="btn btn-primary mr-2" (click)="edit.emit(user)">Edit</button>
+                    <button class="btn btn-danger" (click)="delete.emit(user.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

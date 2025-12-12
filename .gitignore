@@ -1,0 +1,34 @@
+# .NET Core
+bin/
+obj/
+.vs/
+.vscode/
+*.user
+*.suo
+*.launch
+*.lock.json
+
+# Entity Framework & Database
+*.db
+*.sqlite
+*.mdf
+*.ldf
+**/*.db
+**/*.sqlite
+
+# Angular & Node
+node_modules/
+dist/
+.angular/
+package-lock.json
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Other
+*.log
+coverage/
+TestResults/
